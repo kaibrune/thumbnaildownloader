@@ -1,11 +1,36 @@
-.content{
+body{
+    position: relative;
+}
+.content {
     position: absolute;
     top: 50%;
     left: 50%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
 }
-#error{
+
+#error {
     color: red;
     display: none;
+}
+
+#process {
+    display: none;
+}
+
+#process .COL-12 {
+    display: none;
+}
+
+#process h5 {
+    margin-bottom: 30px;
+}
+
+#process a {
+    margin-top: 25px;
+}
+
+#credits{
+    opacity: 0.5;
+    position: fixed; bottom: 0; width:100%; text-align: center
 }
