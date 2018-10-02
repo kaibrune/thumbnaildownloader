@@ -9,7 +9,7 @@ A tool that lets you simply download YouTube Thumbnails with only one click in t
 
 ### Demo
 
-Give it a try [here](https://kaibrune.github.io/thumbnailgenerator/).
+Give it a try [here](https://kaibrune.github.io/thumbnaildownloader/).
 
 ### Missing a feature?
 
