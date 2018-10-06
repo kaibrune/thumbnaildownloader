@@ -20,7 +20,6 @@ body{
 
 #process {
     display: none;
-    transition: all 1s ease-in-out;
 }
 
 #process .COL-12 {
