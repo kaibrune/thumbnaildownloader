@@ -81,5 +81,5 @@ $('.back').click(function () {
   $('#process').slideUp();
   setTimeout(() => {
     $('#intro').fadeIn();
-  }, 200);
+  }, 400);
 });
