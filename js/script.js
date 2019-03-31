@@ -1,14 +1,16 @@
+$("#input").on("paste", function () {
+  setTimeout(function() {
+      submit();
+  });
+});
 $("#input").keyup(function (e) {
   if (e.which == 13) {
-    $("#submit").click();
+    submit();
   }
 });
 
 function submit() {
   var url = document.getElementById('input').value;
-  $('#max').fadeOut();
-  $('#hq').fadeOut();
-  $('#mq').fadeOut();
   parser(url);
 }
 
@@ -18,8 +20,15 @@ function parser(url) {
   var id = (match && match[1].length == 11) ? match[1] : false;
   if (id != false) {
     download(id);
+    $('#intro').fadeOut();
+    $('#max').fadeOut();
+    $('#hq').fadeOut();
+    $('#mq').fadeOut();
   } else {
-    $('#error').fadeIn();
+    $('#input').addClass('error');
+    setTimeout(() => {
+      $('#input').removeClass('error');
+    }, 2000);
   }
 
 }
@@ -28,11 +37,11 @@ function download(id) {
   var maxres = "https://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
   var hqres = "https://img.youtube.com/vi/" + id + "/hqdefault.jpg";
   var mqres = "https://img.youtube.com/vi/" + id + "/mqdefault.jpg";
+  
+  setTimeout(() => {
+    $('.loader').fadeIn();
+  }, 400);
 
-  document.getElementById('input').value = "";
-
-  $('#intro').fadeOut();
-  $('#process').fadeIn();
 
   checkMax();
 
@@ -43,8 +52,12 @@ function download(id) {
           checkHq();
         } else {
           $("#maximg").html(maximg);
-          $('#maxlink').attr("href", maxres);
-          $("#max").slideDown(600);
+          $('.maxlink').attr("href", maxres);
+          setTimeout(() => {
+            $('.loader').fadeOut();
+            $("#max").fadeIn(600);
+          }, 600);
+
         }
       });
   }
@@ -56,8 +69,11 @@ function download(id) {
           checkmq();
         } else {
           $("#hqimg").html(hqimg);
-          $('#hqlink').attr("href", hqres);
-          $("#hq").slideDown(600);
+          $('.hqlink').attr("href", hqres);
+          setTimeout(() => {
+            $('.loader').fadeOut();
+            $("#hq").fadeIn(600);
+          }, 600);
         }
       });
   }
@@ -69,17 +85,26 @@ function download(id) {
           checkmq();
         } else {
           $("#mqimg").html(mqimg);
-          $('#mqlink').attr("href", mqres);
-          $("#mq").slideDown(600);
+          $('.mqlink').attr("href", mqres);
+          setTimeout(() => {
+            $('.loader').fadeOut();
+            $("#mq").fadeIn(600);
+          }, 600);
         }
       });
   }
 
+  setTimeout(() => {
+    document.getElementById('input').value = "";
+  }, 600);
+
 
 }
 $('.back').click(function () {
-  $('#process').slideUp();
+  $('#max').fadeOut();
+  $('#hq').fadeOut();
+  $('#mq').fadeOut()
   setTimeout(() => {
     $('#intro').fadeIn();
-  }, 200);
+  }, 500);
 });

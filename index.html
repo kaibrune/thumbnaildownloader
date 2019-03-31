@@ -9,81 +9,59 @@
     <meta name="description" content="Download nearly every YouTube Thumbnail in original quality with a simple click. Just paste the link and click download.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link rel="stylesheet" type="text/css" href="css/cirrus.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Nunito+Sans:200,300,400,600,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/simple-grid.min.css">
     <script src="js/jquery.min.js"></script>
 </head>
 
 <body>
-    <div class="content">
+        <div class="loader"><img src="img/loader.gif" height="100px" alt=""></div>
+    <div class="container">
         <div id="intro">
-            <div class="row text-center">
-                <div class="COL-12">
-                    <h1 class="">Thumbnail Downloader</h1>
-                    <h5 class="light subtitle">Simple. Fast. Easy.</h5>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-9">
-                    <div class="input-control">
-                        <input type="text" autofocus id="input" class="input-xlarge" placeholder="https://youtu.be/jNQXAC9IVRw">
-                        <div id="error">This is not a valid link.</div>
+                <div class="row">
+                        <div class="col-12">
+                            <h3>Thumbnail Downloader</h3>
+                                    <input type="text" autofocus id="input" placeholder="Just paste a youtube link">
                     </div>
-                </div>
-                <div class="col-3 center">
-                    <div class="btn-container">
-                        <button id="submit" onclick="submit();" class="btn-xlarge">Download</button>
-                    </div>
-                </div>
-
             </div>
-            <div id="credits">
-                    <p><a target="_blank" href="https://kaibrune.com">kb</a> - <a href="https://github.com/kaibrune/thumbnaildownloader">Github</a></p>
-                </div>
         </div>
-        <div id="process" class="text-center">
-            <div class="row">
-                <div id="max" class="COL-12 center">
-                    <h5>Lucky, high quality was available! :)</h5>
-                    <div id="maximg"></div>
-                    <div class="center">
-                        <a target="_blank" id="maxlink">
-                            <button class="btn-xlarge">Download</button>
-                        </a>
-                        <a style="margin-left:20px;" class="back">
-                            <button class="btn-xlarge">Restart</button>
-                        </a>
+
+        <div id="process">
+
+                <div class="row" id="max">
+                    <div class="col-12" >
+                        <a class="maxlink" target="_blank" rel="noopener noreferrer" download><div id="maximg"></div></a>
                     </div>
-                </div>
-                <div id="hq" class="COL-12 center">
-                    <h5>I'm sorry, only standard quality is available! :/</h5>
-                    <div id="hqimg"></div>
-                    <div class="center">
-                        <a target="_blank" id="hqlink">
-                            <button class="btn-xlarge">Download</button>
-                        </a>
-                        <a style="margin-left:20px;" class="back">
-                            <button class="btn-xlarge">Restart</button>
-                        </a>
+                    <div class="col-6">
+                        <a class="maxlink" target="_blank" rel="noopener noreferrer" download><button class="blue">Download</button></a>
                     </div>
-                </div>
-                <div id="mq" class="COL-12 center">
-                    <h5>I'm sorry, only low quality is available! :(</h5>
-                    <div id="mqimg"></div>
-                    <div class="center">
-                        <a target="_blank" id="mqlink">
-                            <button class="btn-xlarge">Download</button>
-                        </a>
-                        <a style="margin-left:20px;" class="back">
-                            <button class="btn-xlarge">Restart</button>
-                        </a>
+                    <div class="col-6">
+                        <a class="back"><button class="gray">Back</button></a>
                     </div>
-                </div>
-            </div>
+                 </div>
+                 <div class="row" id="hq">
+                        <div class="col-12" >
+                            <a class="hqlink" target="_blank" rel="noopener noreferrer" download><div id="hqimg"></div></a>
+                        </div>
+                        <div class="col-6">
+                            <a class="hqlink" target="_blank" rel="noopener noreferrer" download><button class="blue">Download</button></a>
+                        </div>
+                        <div class="col-6">
+                            <a class="back"><button class="gray">Back</button></a>
+                        </div>
+                     </div>
+                     <div class="row" id="mq">
+                            <div class="col-12" >
+                                <a class="mqlink" target="_blank" rel="noopener noreferrer" download><div id="mqimg"></div></a>
+                            </div>
+                            <div class="col-6">
+                                <a class="mqlink" target="_blank" rel="noopener noreferrer" download><button class="blue">Download</button></a>
+                            </div>
+                            <div class="col-6">
+                                <a class="back"><button class="gray">Back</button></a>
+                            </div>
+                         </div>
         </div>
     </div>
-
     <script src="js/script.js"></script>
 </body>
 

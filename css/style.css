@@ -1,43 +1,89 @@
-body{
-    position: relative;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+body, html {
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 100%;
+    width:100%;
+    margin: 0;
+  }
+
+input{
+    width: 90%;
+    padding: 15px;
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #f8f8f8;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+    transition: background-color 1s;
+    background-image: url('../img/send.svg');
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: 97% 50%;
+    background-size: 25px;
+    vertical-align: middle;
 }
-.content {
-    position: absolute;
+
+h3{
+    font-size:1.375rem; 
+    opacity: .5;
+    font-weight: 400;
+}
+
+textarea, select, input, button { outline: none; }
+button{
+    margin-top: 20px;
+    width: 100%;
+    font-size: 20px;
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+    transition: all .5s;
+}
+button:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px;
+    transform: translateY(-2px)
+}
+.blue{
+    background: #0652DD;
+    color: white;
+}
+.gray{
+    background: #ededed;
+    color: gray;
+}
+.text{
     text-align: center;
 }
-
-#error {
-    color: red;
+.loader{
+    position: absolute;
+    z-index: 1;
+    margin: auto;
     display: none;
 }
-
-#process {
-    display: none;
+.error {
+    background-color: #fcdedc;
+    background-image: url('../img/error.svg');
 }
 
-#process .COL-12 {
+#max{
     display: none;
 }
-
+#hq{
+    display: none;
+}
+#mq{
+    display: none;
+}
 #process img{
-    box-shadow: 0px 0px 100px 10px rgba(0, 0, 0, .1);
-
+    transition: all 1s;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 3px;
+    width: 100%;
 }
-
-#process h5 {
-    padding-bottom: 30px;
-    padding-top: 50px;
-}
-
-#process a {
-    margin-top: 25px;
+#process img:hover{
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 6px;
 }
 
 #credits{
